@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonogameLearning", "src\MonogameLearning.JetPlane\MonogameLearning.JetPlane.csproj", "{2DF5CD2E-ED7B-4BB4-AC2F-5DDE5F63BB08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonogameLearning.Engine", "src\MonogameLearning.Engine\MonogameLearning.Engine.csproj", "{C8542610-3A31-4B55-B46D-EF755AAE536A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DF5CD2E-ED7B-4BB4-AC2F-5DDE5F63BB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF5CD2E-ED7B-4BB4-AC2F-5DDE5F63BB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF5CD2E-ED7B-4BB4-AC2F-5DDE5F63BB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF5CD2E-ED7B-4BB4-AC2F-5DDE5F63BB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8542610-3A31-4B55-B46D-EF755AAE536A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8542610-3A31-4B55-B46D-EF755AAE536A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8542610-3A31-4B55-B46D-EF755AAE536A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8542610-3A31-4B55-B46D-EF755AAE536A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
