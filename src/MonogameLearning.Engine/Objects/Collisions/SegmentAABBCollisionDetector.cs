@@ -25,9 +25,12 @@ namespace MonogameLearning.Engine.Objects.Collisions
 
         public void DetectCollisions(List<Segment> segments, Action<A> collisionHandler)
         {
-            if (segments.Any(segment => DetectCollision(_passiveObject, segment)))
+            foreach(var segment in segments)
             {
-                collisionHandler(_passiveObject);
+                if (DetectCollision(_passiveObject, segment))
+                {
+                    collisionHandler(_passiveObject);
+                }
             }
         }
 

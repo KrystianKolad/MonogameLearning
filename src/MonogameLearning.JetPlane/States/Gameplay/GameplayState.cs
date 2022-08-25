@@ -479,6 +479,10 @@ namespace MonogameLearning.JetPlane.States.Gameplay
 
         private async void KillPlayer()
         {
+            if(_playerDead)
+            {
+                return;
+            }
             _playerDead = true;
             _playerLives -= 1;
             _livesText.NbLives = _playerLives;
