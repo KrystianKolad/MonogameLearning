@@ -474,19 +474,19 @@ namespace MonogameLearning.JetPlane.States.Gameplay
                     segments.Add(bullet.CollisionSegment);
                 }
 
-                turretBulletCollisionDetector.DetectCollisions(segments, _ =>
+                turretBulletCollisionDetector.DetectCollisions(segments, async _ =>
                 {
-                    KillPlayer();
+                    await KillPlayer();
                 });
 
-                playerCollisionDetector.DetectCollisions(_playerSprite, (chopper, player) =>
+                playerCollisionDetector.DetectCollisions(_playerSprite, async (chopper, player) =>
                 {
-                    KillPlayer();
+                    await KillPlayer();
                 });
             }
         }
 
-        private async void KillPlayer()
+        private async Task KillPlayer()
         {
             if(_playerDead)
             {
