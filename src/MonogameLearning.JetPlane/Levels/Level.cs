@@ -15,12 +15,14 @@ namespace MonogameLearning.JetPlane.Levels
         private TimeSpan _startGameTime;
         private readonly TimeSpan TickTimeSpan = new TimeSpan(0, 0, 2);
 
+        public int CurrentLevel => _currentLevelNumber;
+        public bool LevelExists => _currentLevel.Count > 0;
+
         public event EventHandler<LevelEvents.GenerateEnemies> OnGenerateEnemies;
         public event EventHandler<LevelEvents.GenerateTurret> OnGenerateTurret;
         public event EventHandler<LevelEvents.StartLevel> OnLevelStart;
         public event EventHandler<LevelEvents.EndLevel> OnLevelEnd;
         public event EventHandler<LevelEvents.NoRowEvent> OnLevelNoRowEvent;
-
         public Level(LevelReader reader)
         {
             _levelReader = reader;
@@ -33,18 +35,24 @@ namespace MonogameLearning.JetPlane.Levels
         public void LoadNextLevel()
         {
             _currentLevelNumber++;
+            _currentLevelRow = 0;
             _currentLevel = _levelReader.LoadLevel(_currentLevelNumber);
         }
 
-        public void Reset()
+        public void Reset(bool fullReset = false)
         {
             _currentLevelRow = 0;
+            if (fullReset)
+            {
+                _currentLevelNumber = 1;
+                _currentLevel = _levelReader.LoadLevel(_currentLevelNumber);   
+            }
         }
 
         public void GenerateLevelEvents(GameTime gameTime)
         {
             // nothing to do until tick time
-            if (gameTime.TotalGameTime - _startGameTime < TickTimeSpan)
+            if (gameTime.TotalGameTime - _startGameTime < TickTimeSpan || !LevelExists)
             {
                 return;
             }
@@ -77,6 +85,10 @@ namespace MonogameLearning.JetPlane.Levels
             }
 
             _currentLevelRow++;
+            if (_currentLevelRow >= _currentLevel.Count)
+            {
+                this.LoadNextLevel();
+            }
         }
     }
 }

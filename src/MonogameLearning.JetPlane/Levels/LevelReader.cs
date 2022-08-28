@@ -26,7 +26,10 @@ namespace MonogameLearning.JetPlane.Levels
             var fileName = $"{assemblyName}.Levels.LevelData.Level{nb}.txt";
 
             var stream = assembly.GetManifestResourceStream(fileName);
-
+            if (stream is null)
+            {
+                return new List<List<BaseGameStateEvent>>();
+            }
             string levelString;
             using (var reader = new StreamReader(stream))
             {

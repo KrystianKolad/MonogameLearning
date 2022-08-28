@@ -34,6 +34,7 @@ namespace MonogameLearning.JetPlane.States.Gameplay
         private const float ScrollingSpeed = 2.0f;
         private const int StartingPlayerLives = 3;
         private const int StartingPlayerPoints = 0;
+        private const int StartingPlayerTotalPoints = 0;
         private const int MaxExplosionAge = 600; // 10 seconds
         private const int ExplosionActiveLength = 75; // emit particles for 1.2 seconds and let them fade out for 10 seconds
 
@@ -47,6 +48,7 @@ namespace MonogameLearning.JetPlane.States.Gameplay
         private PlayerSprite _playerSprite;
         private int _playerLives;
         private int _playerPoints;
+        private int _playerTotalPoints;
         private bool _playerDead;
         private LivesText _livesText;
         private PointsText _pointsText;
@@ -131,7 +133,7 @@ namespace MonogameLearning.JetPlane.States.Gameplay
 
         private void _level_OnLevelStart(object sender, LevelEvents.StartLevel e)
         {
-            _levelStartEndText.Text = "Good luck, Player 1!";
+            _levelStartEndText.Text = $"Good luck on level {_level.CurrentLevel}!";
             _levelStartEndText.Position = new Vector2(350, 300);
             AddGameObject(_levelStartEndText);
         }
@@ -141,6 +143,11 @@ namespace MonogameLearning.JetPlane.States.Gameplay
             _levelStartEndText.Text = $"Points: {_playerPoints}! Congrats!";
             _levelStartEndText.Position = new Vector2(300, 300);
             AddGameObject(_levelStartEndText);
+            _playerTotalPoints += _playerPoints;
+            _playerLives = StartingPlayerLives;
+            _livesText.NbLives = _playerLives;
+            _playerPoints = StartingPlayerPoints;
+            _pointsText.NbPoints = _playerPoints;
         }
 
         private void _level_OnLevelNoRowEvent(object sender, LevelEvents.NoRowEvent e)
@@ -217,6 +224,10 @@ namespace MonogameLearning.JetPlane.States.Gameplay
         {
             _playerSprite?.Update(gameTime);
             _level.GenerateLevelEvents(gameTime);
+            if (!_level.LevelExists)
+            {
+                GameOver();
+            }
 
             foreach (var bullet in _bulletList)
             {
@@ -247,8 +258,6 @@ namespace MonogameLearning.JetPlane.States.Gameplay
             UpdateExplosions(gameTime);
             RegulateShootingRate(gameTime);
             DetectCollisions();
-            _level.GenerateLevelEvents(gameTime);
-
             // get rid of bullets and missiles that have gone out of view
             _bulletList = CleanObjects(_bulletList);
             _missileList = CleanObjects(_missileList);
@@ -503,7 +512,7 @@ namespace MonogameLearning.JetPlane.States.Gameplay
         }
         private void GameOver()
         {
-            _levelStartEndText.Text = "Game Over";
+            _levelStartEndText.Text = $"Total points: {_playerTotalPoints}";
             _levelStartEndText.Position = new Vector2(460, 300);
             AddGameObject(_levelStartEndText);
             _gameOver = true;
@@ -586,7 +595,11 @@ namespace MonogameLearning.JetPlane.States.Gameplay
             _playerPoints = StartingPlayerPoints;
             _pointsText.NbPoints = _playerPoints;
             _playerDead = false;
-            _level.Reset();
+            if (fullReset)
+            {
+                _playerTotalPoints = StartingPlayerTotalPoints;
+            }
+            _level.Reset(fullReset);
         }
 
         public override void Render(SpriteBatch spriteBatch)
