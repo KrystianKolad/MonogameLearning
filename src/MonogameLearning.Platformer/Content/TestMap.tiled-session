@@ -1,0 +1,41 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "Terrain.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "TestMap.tmx": {
+            "scale": 0.51,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 611.764705882353,
+                "y": 557.843137254902
+            }
+        }
+    },
+    "last.imagePath": "/Users/krystian/Desktop/Pixel Art Platformer - Village Props v2.1.0/Texture",
+    "map.height": 25,
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "map.width": 40,
+    "openFiles": [
+    ],
+    "project": "TestMap.tiled-project",
+    "recentFiles": [
+        "TestMap.tmx",
+        "Terrain.tsx"
+    ],
+    "tileset.embedInMap": false,
+    "tileset.lastUsedFormat": "tsx"
+}

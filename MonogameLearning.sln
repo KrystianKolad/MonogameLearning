@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonogameLearning", "src\Mon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonogameLearning.Engine", "src\MonogameLearning.Engine\MonogameLearning.Engine.csproj", "{C8542610-3A31-4B55-B46D-EF755AAE536A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5E7A1A75-F25F-4568-BB73-EB8366957961}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nez", "Nez", "{3C0F7649-0D1B-46AB-B811-59B95E2E9BDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nez", "src\Nez\Nez.Portable\Nez.MG38.csproj", "{56C2E4C4-DF86-43AA-A8F3-802070C89B61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonogameLearning.Platformer", "src\MonogameLearning.Platformer\MonogameLearning.Platformer.csproj", "{B1ADC08B-9E06-4A2A-B3C0-8F076A987546}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +32,18 @@ Global
 		{C8542610-3A31-4B55-B46D-EF755AAE536A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8542610-3A31-4B55-B46D-EF755AAE536A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8542610-3A31-4B55-B46D-EF755AAE536A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C2E4C4-DF86-43AA-A8F3-802070C89B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C2E4C4-DF86-43AA-A8F3-802070C89B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C2E4C4-DF86-43AA-A8F3-802070C89B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C2E4C4-DF86-43AA-A8F3-802070C89B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1ADC08B-9E06-4A2A-B3C0-8F076A987546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1ADC08B-9E06-4A2A-B3C0-8F076A987546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1ADC08B-9E06-4A2A-B3C0-8F076A987546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1ADC08B-9E06-4A2A-B3C0-8F076A987546}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C0F7649-0D1B-46AB-B811-59B95E2E9BDE} = {5E7A1A75-F25F-4568-BB73-EB8366957961}
+		{56C2E4C4-DF86-43AA-A8F3-802070C89B61} = {3C0F7649-0D1B-46AB-B811-59B95E2E9BDE}
+		{B1ADC08B-9E06-4A2A-B3C0-8F076A987546} = {5E7A1A75-F25F-4568-BB73-EB8366957961}
 	EndGlobalSection
 EndGlobal
