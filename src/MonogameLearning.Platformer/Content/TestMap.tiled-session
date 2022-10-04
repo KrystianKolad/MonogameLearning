@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "TestMap.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
@@ -16,11 +16,11 @@
             "scaleInEditor": 1
         },
         "TestMap.tmx": {
-            "scale": 0.51,
+            "scale": 0.4144,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 611.764705882353,
-                "y": 557.843137254902
+                "x": 1054.5366795366795,
+                "y": 617.7606177606176
             }
         }
     },
@@ -30,6 +30,7 @@
     "map.layerDataFormat": null,
     "map.width": 40,
     "openFiles": [
+        "TestMap.tmx"
     ],
     "project": "TestMap.tiled-project",
     "recentFiles": [

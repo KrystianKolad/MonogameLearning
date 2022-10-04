@@ -56,7 +56,8 @@ namespace MonogameLearning.Platformer.Objects
 		{
 			// setup input for jumping. we will allow z on the keyboard or a on the gamepad
 			_jumpInput = new VirtualButton();
-			_jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Z));
+			_jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Up));
+			_jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
 			_jumpInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
 
 			// horizontal input from dpad, left stick or keyboard left/right
@@ -64,6 +65,7 @@ namespace MonogameLearning.Platformer.Objects
 			_xAxisInput.Nodes.Add(new VirtualAxis.GamePadDpadLeftRight());
 			_xAxisInput.Nodes.Add(new VirtualAxis.GamePadLeftStickX());
 			_xAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, Keys.Left, Keys.Right));
+			_xAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, Keys.A, Keys.D));
 		}
 
 		void IUpdatable.Update()
@@ -87,6 +89,11 @@ namespace MonogameLearning.Platformer.Objects
 			if (_collisionState.Below && _jumpInput.IsPressed)
 			{
 				_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
+			}
+
+			if (_collisionState.Above && _velocity.Y < 0)
+			{
+				_velocity.Y = 0;
 			}
 
 			// apply gravity

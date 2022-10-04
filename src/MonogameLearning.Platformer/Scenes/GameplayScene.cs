@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonogameLearning.Platformer.Components;
 using MonogameLearning.Platformer.Objects;
 using Nez;
 using Nez.Tiled;
@@ -17,12 +18,12 @@ namespace MonogameLearning.Platformer.Scenes
 			Screen.SetSize(1280, 720);
 
             var map = Content.LoadTiledMap("Content/TestMap.tmx");
-            var tiledEntity = CreateEntity("test-map");
-            tiledEntity.AddComponent(new TiledMapRenderer(map));
+            var mapEntity = CreateEntity("test-map");
+            mapEntity.AddComponent(new TiledMapRenderer(map));
 
             var player = CreateEntity("player",new Vector2(640, 360));
             player.AddComponent(new Player());
-            player.AddComponent(new BoxCollider(-8, -16, 32, 32));
+            player.AddComponent(new BoxCollider(-16, -16, 32, 32));
 			player.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("Ground")));
 
             var topLeft = Vector2.Zero;
@@ -30,6 +31,7 @@ namespace MonogameLearning.Platformer.Scenes
                 map.TileWidth * map.Width, 
                 map.TileWidth * map.Height);
 
+            mapEntity.AddComponent(new CameraBounds(topLeft, bottomRight));
             Camera.Entity.AddComponent(new FollowCamera(player));
         }
     }

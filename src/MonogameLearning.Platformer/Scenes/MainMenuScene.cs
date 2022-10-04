@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Nez;
 using Nez.UI;
 
@@ -6,6 +7,7 @@ namespace MonogameLearning.Platformer.Scenes
 {
     public class MainMenuScene : BaseScene
     {
+        private VirtualButton _nextInput;
         public override Table Table { get; set; }
         public override void Initialize()
         {
@@ -22,9 +24,27 @@ namespace MonogameLearning.Platformer.Scenes
             var playButton = Table.Add(new TextButton("Start!", Skin.CreateDefaultSkin())).SetFillX().SetMinHeight(30).GetElement<TextButton>();
 
             playButton.OnClicked += PlayButton_onClicked;
+
+            _nextInput = new VirtualButton();
+            _nextInput.AddKeyboardKey(Keys.Enter);
+
         }
 
         private void PlayButton_onClicked(Button obj)
+        {
+            PlayNextScene();
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            if (_nextInput.IsPressed)
+            {
+                PlayNextScene();
+            }
+        }
+
+        private void PlayNextScene()
         {
             Core.StartSceneTransition(new TextureWipeTransition(() => new GameplayScene())
             {

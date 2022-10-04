@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.0" orientation="orthogonal" renderorder="right-down" width="40" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.9" tiledversion="1.9.0" orientation="orthogonal" renderorder="right-down" width="60" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="1">
  <tileset firstgid="1" source="Terrain.tsx"/>
- <layer id="3" name="Background" width="40" height="25">
+ <layer id="3" name="Background" width="60" height="25">
   <data encoding="base64" compression="zlib">
-   eJztzbENAEAIAkBmcP9hP7HXd4AjuQYKKkkBAAAAna2f9t92+X3ya0X3
+   eJztzrENACAMA7Dc0Pv6/x1MbKBKLCwevKRK1EpSAAAAAADwQYb8dO+h25f81bS3/1hRg2n9
   </data>
  </layer>
- <layer id="1" name="Ground" width="40" height="25">
+ <layer id="1" name="Ground" width="60" height="25">
   <data encoding="base64" compression="zlib">
-   eJztz0sKACAIRdE+K8j2v1dtbjUIMuIeuEPhKQmII9EDAAAAgE9lqzjVBzaMZNHs5iTv77bZcbNuKZvtA3M=
+   eJzt1EkOQEAQhWFDiK22cRPzcBD3P4dXC0kvWDRF6+R9yb8irSqBiYgoVMb3AERERERE9Eux7wE+Vvoe4GOh71s43i/7pm8MYmlQizrUowGNaEIzWtB68+za8X7Zt7r5rBC57iv/t+SkVWmeDOVKZx2uZv5j9remNfcZo9D28Lpkv3ulwnnSDi6VCIA=
   </data>
  </layer>
 </map>
