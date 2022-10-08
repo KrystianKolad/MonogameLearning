@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using Nez;
 using Nez.UI;
 
@@ -12,6 +13,8 @@ namespace MonogameLearning.Platformer.Scenes
         public override void Initialize()
         {
             SetupScene();
+            SetDesignResolution(1280, 720, SceneResolutionPolicy.ShowAllPixelPerfect);
+			Screen.SetSize(1280, 720);
             
             Table.Add(new Label("Main Menu").SetFontScale(5));
             
@@ -28,6 +31,8 @@ namespace MonogameLearning.Platformer.Scenes
             _nextInput = new VirtualButton();
             _nextInput.AddKeyboardKey(Keys.Enter);
 
+            MediaPlayer.Play(this.Content.Load<Song>("Sounds/Soundtrack/menuTheme"));
+            MediaPlayer.IsRepeating = true;
         }
 
         private void PlayButton_onClicked(Button obj)

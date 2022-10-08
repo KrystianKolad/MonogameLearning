@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Nez;
 using Nez.UI;
@@ -12,6 +11,7 @@ namespace MonogameLearning.Platformer.Scenes
         public void SetupScene()
         {
             AddRenderer(new DefaultRenderer());
+            // Core.DebugRenderEnabled = true;
             var UICanvas = CreateEntity("ui-canvas").AddComponent(new UICanvas());
             Table = UICanvas.Stage.AddElement(new Table());
             Table.SetFillParent(true).Top().PadLeft(10).PadTop(50);

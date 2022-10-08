@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.0" orientation="orthogonal" renderorder="right-down" width="60" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.9" tiledversion="1.9.0" orientation="orthogonal" renderorder="right-down" width="60" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="10">
  <tileset firstgid="1" source="Terrain.tsx"/>
  <layer id="3" name="Background" width="60" height="25">
   <data encoding="base64" compression="zlib">
-   eJztzrENACAMA7Dc0Pv6/x1MbKBKLCwevKRK1EpSAAAAAADwQYb8dO+h25f81bS3/1hRg2n9
+   eJztzaERAEAIBLGrgfq+/zpQVMAbZiKiVmwlKQAAAAAAOOIt++/faINLalc=
   </data>
  </layer>
  <layer id="1" name="Ground" width="60" height="25">
   <data encoding="base64" compression="zlib">
-   eJzt1EkOQEAQhWFDiK22cRPzcBD3P4dXC0kvWDRF6+R9yb8irSqBiYgoVMb3AERERERE9Eux7wE+Vvoe4GOh71s43i/7pm8MYmlQizrUowGNaEIzWtB68+za8X7Zt7r5rBC57iv/t+SkVWmeDOVKZx2uZv5j9remNfcZo9D28Lpkv3ulwnnSDi6VCIA=
+   eJzt1EsOQDAUheEixBQTO/GmC7H/dTh3IOmAQWkVOV/yj0jdm0ApIiIiIiIiIvqTKPQADytCD/Cwr++bW94v+yY+BjE0qEUd6tGARjShGS1IXzy7trxf9q0uPuuLbPeV/1t8kHY0T4oyR2ftzmZ+Y+a35mru0lPrzeuS+e4VDs6TNne4CLY=
   </data>
  </layer>
+ <objectgroup id="8" name="Enemies">
+  <object id="1" name="Enemy2" class="Enemy" x="1486.49" y="726.351">
+   <point/>
+  </object>
+  <object id="2" name="Enemy1" class="Enemy" x="945.946" y="617.761">
+   <point/>
+  </object>
+  <object id="6" name="Enemy1-MaxLeft-Position" class="Position" x="784.266" y="617.761">
+   <point/>
+  </object>
+  <object id="7" name="Enemy1-MaxRight-Position" class="Position" x="1073.84" y="622.587">
+   <point/>
+  </object>
+  <object id="8" name="Enemy2-MaxRight-Position" class="Position" x="1761.58" y="723.938">
+   <point/>
+  </object>
+  <object id="9" name="Enemy2-MaxLeft-Position" class="Position" x="1365.83" y="719.112">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="9" name="Player">
+  <object id="3" name="Player" class="Player" x="115.83" y="719.112">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="12" name="Danger-zone">
+  <object id="4" x="1298.26" y="781.853">
+   <point/>
+  </object>
+  <object id="5" x="1327.22" y="786.68">
+   <point/>
+  </object>
+ </objectgroup>
 </map>

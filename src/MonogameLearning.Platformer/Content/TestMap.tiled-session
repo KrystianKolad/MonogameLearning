@@ -11,16 +11,27 @@
         "": {
             "scaleInDock": 1
         },
+        "/Users/krystian/Desktop/Nez-Samples-master/Nez.Samples/Content/Platformer/tiledMap.tmx": {
+            "scale": 1.06578125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 320.891364902507,
+                "y": 240.19938425450817
+            }
+        },
+        "/Users/krystian/Desktop/Nez-Samples-master/Nez.Samples/Content/Platformer/tiledMap.tmx#tileset": {
+            "scaleInDock": 1
+        },
         "Terrain.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "TestMap.tmx": {
             "scale": 0.4144,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1054.5366795366795,
-                "y": 617.7606177606176
+                "x": 1153.4749034749034,
+                "y": 656.3706563706563
             }
         }
     },
@@ -35,6 +46,7 @@
     "project": "TestMap.tiled-project",
     "recentFiles": [
         "TestMap.tmx",
+        "/Users/krystian/Desktop/Nez-Samples-master/Nez.Samples/Content/Platformer/tiledMap.tmx",
         "Terrain.tsx"
     ],
     "tileset.embedInMap": false,
